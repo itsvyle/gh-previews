@@ -25,21 +25,25 @@ client.on("messageCreate", (message) => {
         prepareReply(message.content)
             .then(async (r) => {
                 if (!r) return;
-                message.reply({
-                    content: r,
-                    allowedMentions: {
-                        repliedUser: false,
-                    },
-                });
+                message
+                    .reply({
+                        content: r,
+                        allowedMentions: {
+                            repliedUser: false,
+                        },
+                    })
+                    .catch(console.error);
             })
             .catch((e) => {
                 console.error(e);
-                message.reply({
-                    content: "Error fetching code snippet",
-                    allowedMentions: {
-                        repliedUser: false,
-                    },
-                });
+                message
+                    .reply({
+                        content: "Error fetching code snippet",
+                        allowedMentions: {
+                            repliedUser: false,
+                        },
+                    })
+                    .catch(console.error);
             });
     }
 });
