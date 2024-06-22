@@ -17,3 +17,8 @@ DISCORD_TOKEN=your_discord_bot_token
 Then, run `yarn install` and `yarn start` to start the bot.
 
 You will of course need yarn, node, and a discord bot created with the token obtained
+
+## Roadmap:
+
+-   Add authentication, so that it can access code from private repositories
+-   Add support for knowing who edited the file last, etc.
