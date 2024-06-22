@@ -22,14 +22,25 @@ client.on("ready", () => {
 client.on("messageCreate", (message) => {
     if (message.author.bot) return;
     if (containsGithubLink(message.content)) {
-        let r = prepareReply(message.content);
-        if (!r) return;
-        message.reply({
-            content: r,
-            allowedMentions: {
-                repliedUser: false,
-            },
-        });
+        prepareReply(message.content)
+            .then((r) => {
+                if (!r) return;
+                message.reply({
+                    content: r,
+                    allowedMentions: {
+                        repliedUser: false,
+                    },
+                });
+            })
+            .catch((e) => {
+                console.error(e);
+                message.reply({
+                    content: "Error fetching code snippet",
+                    allowedMentions: {
+                        repliedUser: false,
+                    },
+                });
+            });
     }
 });
 
