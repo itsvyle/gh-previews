@@ -6,9 +6,14 @@
   "author": "Greg Mat. <65409906+itsvyle@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.14.8",
     "tsx": "^4.15.7"
   },
   "scripts": {
     "start": "tsx index.ts"
+  },
+  "dependencies": {
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5"
   }
 }
