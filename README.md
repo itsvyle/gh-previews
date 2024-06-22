@@ -12,6 +12,7 @@ Create a `.env` file in the root directory with the following content:
 
 ```
 DISCORD_TOKEN=your_discord_bot_token
+GITHUB_PAT=<a github PAT to access private repos, this is optional>
 ```
 
 Then, run `yarn install` and `yarn start` to start the bot.
