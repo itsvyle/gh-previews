@@ -2,7 +2,7 @@
 
 A discord bot to preview code from github code links directly in discord
 
-Objective is to match this kind of link: https://github.com/itsvyle/gh-previews/blob/74f1ef26acfec41574d84b335fce0ee431a424af/README.md#L2
+Objective is to match this kind of link: github.com/itsvyle/gh-previews/blob/74f1ef26acfec41574d84b335fce0ee431a424af/README.md#L2
 
 This is useful for code review and sharing code snippets in discord, as it makes asking questions about code snippets easier, without the need for screenshots everywhere.
 
