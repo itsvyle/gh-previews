@@ -31,7 +31,6 @@ export async function prepareReply(message: string): Promise<string> {
     const endLineNumber = parse[M_ENDLINE]
         ? parseInt(parse[M_ENDLINE]!)
         : lineNumber;
-    console.log(lineNumber, endLineNumber);
 
     let snippet = await axios.get(url).then((response) => {
         let lines = response.data.split("\n");
