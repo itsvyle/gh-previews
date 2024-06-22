@@ -23,7 +23,7 @@ client.on("messageCreate", (message) => {
     if (message.author.bot) return;
     if (containsGithubLink(message.content)) {
         prepareReply(message.content)
-            .then((r) => {
+            .then(async (r) => {
                 if (!r) return;
                 message.reply({
                     content: r,
