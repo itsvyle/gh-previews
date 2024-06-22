@@ -22,10 +22,10 @@ client.on("ready", () => {
 client.on("messageCreate", (message) => {
     if (message.author.bot) return;
     if (containsGithubLink(message.content)) {
-        let r = message.content;
+        let r = prepareReply(message.content);
         if (!r) return;
         message.reply({
-            content: prepareReply(r),
+            content: r,
             allowedMentions: {
                 repliedUser: false,
             },
