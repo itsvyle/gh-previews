@@ -36,5 +36,8 @@ export async function prepareReply(message: string): Promise<string> {
     const extension = fileName.split(".").pop();
     snippet = `\`\`\`${extension}\n${snippet}\n\`\`\``;
 
-    return snippet;
+    const html_url = `https://github.com/${parse![2]}/${parse![3]}/blob/${parse![4]}/${parse![5]}`;
+    let res = `Snippet from [${fileName}](${html_url})\n\n${snippet}`;
+
+    return res;
 }
