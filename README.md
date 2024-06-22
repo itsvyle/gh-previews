@@ -22,3 +22,5 @@ You will of course need yarn, node, and a discord bot created with the token obt
 
 -   Add authentication, so that it can access code from private repositories
 -   Add support for knowing who edited the file last, etc.
+-   Mutliline snippets
+-   Docker container
