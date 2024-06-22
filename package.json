@@ -1,0 +1,14 @@
+{
+  "name": "gh-previews",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/itsvyle/gh-previews",
+  "author": "Greg Mat. <65409906+itsvyle@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tsx": "^4.15.7"
+  },
+  "scripts": {
+    "start": "tsx index.ts"
+  }
+}
