@@ -13,7 +13,7 @@
     "scripts": {
         "start": "tsx ./src/index.ts",
         "test": "tsx ./src/tests.ts",
-        "bundle": "cd src && esbuild index.ts --bundle --minify --outfile=../bundle.js --platform=node --target=node20"
+        "bundle": "cd src && esbuild index.ts --bundle --minify-whitespace --minify-syntax --outfile=../bundle.js --platform=node --target=node20"
     },
     "dependencies": {
         "axios": "^1.7.2",
