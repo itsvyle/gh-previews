@@ -1,6 +1,8 @@
 import "dotenv/config";
 import axios from "axios";
 import { assert } from "console";
+import type { MessageReplyOptions } from "discord.js";
+import { ButtonBuilder, ActionRowBuilder, ButtonStyle } from "discord.js";
 const linkRegex =
     /https?:\/\/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/(.+)#L(\d+)(?:-L(\d+))?/;
 export function containsGithubLink(message: string): boolean {
@@ -30,9 +32,11 @@ const M_REF = 3;
 const M_PATH = 4;
 const M_LINE = 5;
 const M_ENDLINE = 6;
-export async function prepareReply(message: string): Promise<string> {
+export async function prepareReply(
+    message: string
+): Promise<MessageReplyOptions> {
     const parse = linkRegex.exec(message); // bug: can't use linkRegex here, as it's stateful
-    if (!parse) return "Invalid GitHub link";
+    if (!parse) return { content: "Invalid GitHub link" };
     const path = parse[M_PATH]!;
 
     const url = `https://api.github.com/repos/${parse![M_OWNER]}/${parse![M_REPO]}/contents/${path}?ref=${parse![M_REF]}`;
@@ -84,8 +88,22 @@ export async function prepareReply(message: string): Promise<string> {
     const extension = path.split(".").pop();
     snippet = `\`\`\`${extension}\n${snippet}\n\`\`\``;
 
-    const html_url = `<https://github.com/${parse[M_OWNER]}/${parse[M_REPO]}/blob/${parse[M_REF]}/${parse[M_PATH]}#L${lineNumber}>`;
-    let res = `Snippet from [/${path}](${html_url})\n\n${snippet}`;
+    const html_url = `https://github.com/${parse[M_OWNER]}/${parse[M_REPO]}/blob/${parse[M_REF]}/${parse[M_PATH]}#L${lineNumber}`;
+    let res = `Snippet from **/${path}**:#L${lineNumber}\n\n${snippet}`;
 
-    return res;
+    const viewOnGithub = new ButtonBuilder()
+        .setLabel("View on GitHub")
+        .setStyle(ButtonStyle.Link)
+        .setURL(html_url);
+
+    const row = new ActionRowBuilder().addComponents(viewOnGithub);
+
+    return {
+        content: res,
+        allowedMentions: {
+            repliedUser: false,
+        },
+        // @ts-expect-error
+        components: [row],
+    };
 }

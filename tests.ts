@@ -45,7 +45,7 @@ for (const msg of messages) {
             } else if (
                 reply &&
                 !msg.hasPreviewLink &&
-                !reply.includes("Invalid")
+                !reply.content?.includes("Invalid")
             ) {
                 console.error(
                     `Test failed for message: '${msg.message}', expected no reply but got '${reply}'`
