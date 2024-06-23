@@ -22,6 +22,7 @@ client.on("ready", () => {
 client.on("messageCreate", (message) => {
     if (message.author.bot) return;
     if (containsGithubLink(message.content)) {
+        message.suppressEmbeds().catch(() => {});
         prepareReply(message.content)
             .then(async (r) => {
                 if (!r) return;
