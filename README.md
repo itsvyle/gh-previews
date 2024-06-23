@@ -19,6 +19,8 @@ Then, run `yarn install` and `yarn start` to start the bot.
 
 You will of course need yarn, node, and a discord bot created with the token obtained
 
+You can also use the dockerfile to build and run the bot in a container; just mount an `--env-file` with the same content as the `.env` file, or pass the environment variables directly.
+
 When adding the bot to your server, make sure to give it the following permissions:
 
 -   Send Messages
@@ -28,7 +30,6 @@ When adding the bot to your server, make sure to give it the following permissio
 
 Discord developper portal screenshot:
 ![image](https://github.com/itsvyle/gh-previews/assets/65409906/ad977498-203d-4093-82cb-a38be9bb367e)
-
 
 ## Example
 
