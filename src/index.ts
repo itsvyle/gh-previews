@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { Client, GatewayIntentBits } from "discord.js";
-import { containsGithubLink, prepareReply } from "core";
+import { containsGithubLink, prepareReply } from "./core";
 
 const discordToken = process.env.DISCORD_TOKEN;
 if (!discordToken) {
