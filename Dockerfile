@@ -2,7 +2,7 @@ FROM node:20 as build
 WORKDIR /app
 COPY . /app/
 
-RUN --mount=type=cache,source=/usr/local/share/.yarn_docker,target=/usr/local/share/.yarn_docker YARN_CACHE_FOLDER=/usr/local/share/.yarn_docker yarn --frozen-lockfile
+RUN --mount=type=cache,target=/root/.yarn YARN_CACHE_FOLDER=/root/.yarn yarn --frozen-lockfile
 
 RUN yarn bundle
 
