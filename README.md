@@ -23,6 +23,4 @@ You will of course need yarn, node, and a discord bot created with the token obt
 
 -   Add authentication, so that it can access code from private repositories ON REPOS I DONT OWN
 -   Add support for knowing who edited the file last, etc.
--   Docker container
--   Block the snippet becoming bigger if it's more than 2k characters
 -   Add image examples

@@ -91,6 +91,10 @@ export async function prepareReply(
     const html_url = `https://github.com/${parse[M_OWNER]}/${parse[M_REPO]}/blob/${parse[M_REF]}/${parse[M_PATH]}#L${lineNumber}`;
     let res = `Snippet from **/${path}**:#L${lineNumber}\n\n${snippet}`;
 
+    if (res.length > 2000) {
+        res = `Snippet from **/${path}**:#L${lineNumber}\n\nSnippet is too long to display`;
+    }
+
     const viewOnGithub = new ButtonBuilder()
         .setLabel("View on GitHub")
         .setStyle(ButtonStyle.Link)
