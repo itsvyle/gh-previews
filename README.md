@@ -26,6 +26,10 @@ When adding the bot to your server, make sure to give it the following permissio
 -   Read messages history - this is essential as you need to be able to read the message history to reply to a message
 -   OPTIONAL: manage messages - this will let the bot delete the embed that shows up in the original embed
 
+Discord developper portal screenshot:
+![image](https://github.com/itsvyle/gh-previews/assets/65409906/ad977498-203d-4093-82cb-a38be9bb367e)
+
+
 ## Example
 
 ### Copying links
