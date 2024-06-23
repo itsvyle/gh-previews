@@ -50,4 +50,3 @@ Once the link is copied, just put it in a discord message, and the bot will answ
 
 -   Add authentication, so that it can access code from private repositories ON REPOS I DONT OWN
 -   Add support for knowing who edited the file last, etc.
--   Add image examples
