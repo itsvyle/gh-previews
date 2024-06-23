@@ -12,7 +12,7 @@
     },
     "scripts": {
         "start": "tsx index.ts",
-        "test": "npx ts-node test.ts",
+        "test": "tsx tests.ts",
         "bundle": "esbuild index.ts --bundle --minify --outfile=bundle.js --platform=node"
     },
     "dependencies": {
