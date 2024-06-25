@@ -51,3 +51,4 @@ Once the link is copied, just put it in a discord message, and the bot will answ
 -   Add authentication, so that it can access code from private repositories ON REPOS I DONT OWN
 -   Add support for knowing who edited the file last, etc.
 -   Add support for not having a line number
+-   Automatically find files in recent repos when mentioned, and suggest a preview; if the message only contains a mention and is a reply, it uses the content of the previous message
